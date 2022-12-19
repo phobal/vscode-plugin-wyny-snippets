@@ -1,0 +1,22 @@
+{
+  "create form": {
+    "prefix": "caf",
+    "body": [
+      "import React, { useEffect, useState } from 'react';",
+      "import { Form, DatePicker, Select } from 'antd';",
+      "import { WrappedFormUtils } from 'antd/lib/form/Form; \n",
+
+      "type $1Props = {",
+      "\t$2",
+      "}",
+      " ",
+      "const function $1(props: $1Props) {",
+      "\treturn (",
+      "\t\t<Form>",
+      "\t\t</Form>",
+      ")",
+      "}"
+    ],
+    "description": "创建 Form 表单"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "vscode-plugin-wyny-snippets",
+  "version": "0.0.1",
+  "description": "some code snippets of the wyny frontend team",
+  "main": "out/src/extension.js",
+  "author": "fengb@chinawyny.com",
+  "license": "MIT",
+  "engines": {
+		"vscode": "^1.63.0"
+	},
+  "scripts": {
+    "compile": "tsc -p ./",
+    "test": "test"
+  },
+  "keywords": [
+    "code-snippets",
+    "wyny"
+  ],
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onCommand:extension.wynyCodeSnippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets-js.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets-js.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets-ts.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets-ts.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.wynyCodeSnippets",
+        "title": "万益能源前端代码片段"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4"
+  }
+}
