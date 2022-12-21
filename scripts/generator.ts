@@ -25,14 +25,15 @@ const generator = () => {
 };
 
 const findSnippetsFiles = () => {
-  glob(path.resolve(__dirname, "../snippets/*.tsx"), {}, async (err, files) => {
+  glob(path.resolve(__dirname, "../snippets/*.tpl"), {}, async (err, files) => {
     // console.log("---files", files);
     await makeFile(files);
   });
 };
 
-const makeFile = (files: string[]) => {
-  return files.map(async (file, index) => {
+const makeFile = async (files: string[]) => {
+  let length = 0;
+  async function readFile(file: string) {
     prefixDone = false;
     descriptionDone = false;
     let prefix = "";
@@ -43,8 +44,7 @@ const makeFile = (files: string[]) => {
       description: string;
       body: string[];
     } = {};
-    await eachLine(file, (line: string, last: boolean) => {
-      // console.log('line', line);
+    await eachLine(file, async (line: string, last: boolean) => {
       if (!prefixDone) {
         prefix = makePrefix(line) as string;
         if (prefix) {
@@ -53,16 +53,18 @@ const makeFile = (files: string[]) => {
             description: "",
             body: [],
           };
+          return;
         }
       }
       if (!descriptionDone) {
         description = makeDescription(line) as string;
         if (description && prefixDone) {
           current["description"] = description;
+          return;
         }
       }
-      const body = makeBody(line);
       if (prefixDone && descriptionDone) {
+        const body = makeBody(line);
         if (body) {
           current["body"].push(body);
         } else {
@@ -77,12 +79,17 @@ const makeFile = (files: string[]) => {
           ...snippets,
           [prefix]: current,
         };
+        if (length < files.length - 1) {
+          length = length + 1;
+          await readFile(files[length]);
+        }
+        if (length === files.length -1) {
+          writeSnippetsJsonFile(JSON.stringify(snippets));
+        }
       }
     });
-    if (index === files.length - 1) {
-      writeSnippetsJsonFile(JSON.stringify(snippets));
-    }
-  });
+  }
+  await readFile(files[length]);
 };
 
 const makePrefix = (str: string) => {
@@ -100,7 +107,7 @@ const makeDescription = (str: string) => {
 };
 
 const makeBody = (str: string) => {
-  if (!str.includes("*")) {
+  if (!str.includes("*/")) {
     // @ts-ignore
     return str.replaceAll("  ", "\t");
   }
@@ -108,7 +115,7 @@ const makeBody = (str: string) => {
 
 const writeSnippetsJsonFile = (text: string) => {
   fs.writeFile(
-    path.resolve(__dirname, "../snippets/snippets.json"),
+    path.resolve(__dirname, "../snippets/snippets-ts.json"),
     text,
     (err) => {}
   );

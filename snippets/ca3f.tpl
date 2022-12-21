@@ -1,5 +1,5 @@
 /**
- * @prefix CA3F
+ * @prefix WYNY_CA3F
  * @description 创建 antd3 版本的 Form 表单
  */
 import React from "react";

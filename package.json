@@ -26,20 +26,12 @@
   "contributes": {
     "snippets": [
       {
-        "language": "javascriptreact",
-        "path": "./snippets/snippets-js.json"
-      },
-      {
-        "language": "javascript",
-        "path": "./snippets/snippets-js.json"
-      },
-      {
         "language": "typescriptreact",
-        "path": "./snippets/snippets.json"
+        "path": "./snippets/snippets-ts.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/snippets.json"
+        "path": "./snippets/snippets-ts.json"
       }
     ],
     "commands": [
