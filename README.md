@@ -5,7 +5,7 @@
 [🔽Download](https://marketplace.visualstudio.com/items?itemName=phobal.vscode-plugin-wyny-snippets)
 
 
-  <details><summary><b>创建基于 antd3 表单模板代码 - `WYNY_CA3F`</b></summary>
+  <details><summary><b>创建基于 antd3 表单模板代码 - WYNY_CA3F</b></summary>
     <p>
 
     ``` tsx
@@ -86,3 +86,7 @@
   </p>
 </details>
 
+
+### 如何贡献代码
+
+请参考 [CONTRIBUTING](./CONTRIBUTING.md)
