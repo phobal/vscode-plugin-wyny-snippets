@@ -2,7 +2,7 @@ devDependencies:
   '@tsconfig/node16': 1.0.3
   '@types/glob': 8.0.0
   '@types/node': 18.11.17
-  '@types/vscode': 1.74.0
+  '@types/vscode': 1.39.0
   bluebird: 3.7.2
   glob: 8.0.3
   line-reader: 0.4.0
@@ -66,10 +66,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==
-  /@types/vscode/1.74.0:
+  /@types/vscode/1.39.0:
     dev: true
     resolution:
-      integrity: sha512-LyeCIU3jb9d38w0MXFwta9r0Jx23ugujkAxdwLTNCyspdZTKUc43t7ppPbCiPoQ/Ivd/pnDFZrb4hWd45wrsgA==
+      integrity: sha512-rlg0okXDt7NjAyHXbZ2nO1I/VY/8y9w67ltLRrOxXQ46ayvrYZavD4A6zpYrGbs2+ZOEQzcUs+QZOqcVGQIxXQ==
   /acorn-walk/8.2.0:
     dev: true
     engines:
@@ -216,7 +216,7 @@ specifiers:
   '@tsconfig/node16': ^1.0.3
   '@types/glob': ^8.0.0
   '@types/node': ^18.11.17
-  '@types/vscode': ^1.74.0
+  '@types/vscode': 1.39.0
   bluebird: ^3.7.2
   glob: ^8.0.3
   line-reader: ^0.4.0

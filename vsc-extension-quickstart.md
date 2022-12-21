@@ -2,9 +2,6 @@
 
 > 日常业务开发中一些常用的代码片段
 
-[🔽Download](https://marketplace.visualstudio.com/items?itemName=phobal.vscode-plugin-wyny-snippets)
-
-
   <details><summary><b>创建基于 antd3 表单模板代码 - `WYNY_CA3F`</b></summary>
     <p>
 
