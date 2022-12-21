@@ -22,7 +22,7 @@ export function activate(context: ExtensionContext) {
     if (!editor) return;
 
     let selection = editor.selection;
-    let range, text;
+    let range: Range, text: string;
 
     // if there is no text, get the entire document
     if (selection.isEmpty) {
