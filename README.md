@@ -46,7 +46,31 @@
 </details>
 
 
-  <details><summary><b>创建一个 dva model 结构 - WYNY_CDvaM</b></summary>
+  <details><summary><b>创建 antd3 版本的自定义表单组件结构 - WYNY_CA3CF</b></summary>
+    <p>
+
+    ``` tsx
+      import React, { forwardRef } from 'react';
+      import { Input } from 'antd';
+
+      type $1Props = {
+        value: string;
+        onChange: () => void;
+      };
+
+      const $1: React.ForwardRefRenderFunction<any, $1Props> = (
+        { value, onChange },
+        ref,
+      ) => {
+        return <Input ref={ref} value={value} onChange={onChange} />;
+      };
+
+      export default forwardRef($1);
+
+    ```
+  </p>
+</details>
+<details><summary><b>创建 antd3 版本的弹窗表单 ModalForm 结构 - WYNY_CA3MF</b></summary>
     <p>
 
     ``` tsx
@@ -85,8 +109,58 @@
     ```
   </p>
 </details>
+<details><summary><b>创建一个 dva model 结构 - WYNY_CDvaM</b></summary>
+    <p>
+
+    ``` tsx
+    import React from "react";
+    import { Modal, Form, Input } from "antd";
+    import { WrappedFormUtils } from "antd/lib/form/Form";
+
+    type $1Props = {
+      visible: Boolean;
+      form: WrappedFormUtils;
+    };
+
+    const formItemLayout = {
+      labelCol: { span: 4 },
+      wrapperCol: { span: 20 },
+    };
+
+    function $1(props: $1Props): JSX.Element {
+      const { form } = props;
+      const { getFieldDecorator } = form;
+      const onOk = () => {
+        form.validateFields((err, values) => {
+          if (err) return
+          console.log(values)
+        })
+      }
+      return (
+        <Modal visible={visible} width={500} title="新增" onOk={onOk}>
+          <Form {...formItemLayout}>
+            <Form.Item label="姓名">
+              {getFieldDecorator("name", {
+                initialValue: "",
+                rules: [
+                  {
+                    required: true,
+                  },
+                ],
+              })(<Input />)}
+            </Form.Item>
+          </Form>
+        </Modal>
+      );
+    }
+
+    export default Form.create<$1Props>()($1);
+
+    ```
+  </p>
+</details>
 
 
 ### 如何贡献代码
 
-请参考 [CONTRIBUTING](./CONTRIBUTING.md)
+请参考 [CONTRIBUTING](http://gitlab.in.chinawyny.com/front-end/infra/vscode-wyny-code-snippets/-/blob/master/CONTRIBUTING.md)
