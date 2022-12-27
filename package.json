@@ -1,6 +1,6 @@
 {
   "name": "vscode-plugin-wyny-snippets",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "some code snippets of the wyny frontend team",
   "main": "out/src/extension.js",
   "author": "fengb@chinawyny.com",
