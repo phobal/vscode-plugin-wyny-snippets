@@ -160,6 +160,25 @@
   </p>
 </details>
 
+<details><summary><b>创建一个简单的 react function 组件 - WYNY_rfc</b></summary>
+    <p>
+
+    ``` tsx
+    import React from 'react'
+
+    type Props = {}
+
+    const ${1:${TM_FILENAME_BASE}} = (props: Props) => {
+      return (
+        <div>${1:${TM_FILENAME_BASE}}</div>
+      )
+    }
+
+    export default ${1:${TM_FILENAME_BASE}}
+    ```
+  </p>
+</details>
+
 
 ### 如何贡献代码
 
